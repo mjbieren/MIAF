@@ -1,4 +1,4 @@
-# 🧬 Mafft and IQtree for All FastaFiles (MIAF)
+# 💻 Mafft and IQtree for All FastaFiles (MIAF)
 This repository hosts the MIAF tool, which automates the alignment and phylogenetic analysis of multiple FASTA files using **MAFFT** and **IQ-TREE**, or **prequal**, **MAFFT**, and **ClipKit**. And was created to smoothen the heavily resource demanding steps within the PhyloRSeq++ pipeline. 
 This tool supports **local execution**, and in the near future, **SLURM cluster environments**. It is currently functional but under active development for optimization and parameter tuning.
 
@@ -18,6 +18,10 @@ This tool supports **local execution**, and in the near future, **SLURM cluster 
 - Automatic self-restart when job time reaches 90%
 
 ---
+
+## 🧬 Workflow Overview
+
+![Pipeline_Diagram](https://github.com/mjbieren/MIAF/blob/main/Sources/Images/miaf_flow.png?raw=True_"Pipeline")
 
 ## 🧪 Methods Explained
 
