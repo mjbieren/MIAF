@@ -102,7 +102,7 @@ MIAF.out -i [Fasta_File_Folder] -m ${MAFFT} -r [OUTPUT_FOLDER] -c [NUMBER_OF_SIM
 
 ## 🔗 References
 
-Below are the main tools and resources that have to be pre-installed in MIAF:
+Below are the main tools and resources that have to be pre-installed for MIAF to be able to work:
 
 - **[MAFFT](https://mafft.cbrc.jp/alignment/software/)**  
   A fast and accurate multiple sequence alignment program for amino acid or nucleotide sequences.
