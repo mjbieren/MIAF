@@ -25,13 +25,13 @@ Automate the alignment and phylogenetic analysis of multiple FASTA files using *
 | `-i <Fasta File Directory>` | **(REQUIRED)** Path to the directory containing your FASTA files. |
 | `-r <Output Folder Path>` | **(REQUIRED)** Directory where all generated scripts and outputs will be stored. |
 | `-m <MAFFT Path>` | **(REQUIRED)** Full path to MAFFT, or just `'mafft'` if it’s in your system’s PATH. |
-| `-q <IQ-TREE Path>` | **(REQUIRED)** Full path to IQ-TREE, or just `'iqtree'` if it’s available globally. |
+| `-q <IQ-TREE Path>` | **(REQUIRED METHOD 1, *(Optional)* METHOD 2)** Full path to IQ-TREE, or just `'iqtree'` if it’s available globally. |
 | `-a <APPPF Path>` | *(Optional)* Path to the **ApplyPhyloPyPrunerFormat** script. |
 | `-f <Taxonomic Group File>` | **(REQUIRED if `-a` is used)** Path to a file specifying taxonomic groups for pruning. |
-| `-c <CPU Limit>` | *(Optional)* Number of concurrent jobs (threads) to run. Controls parallelism. |
-| `-x <IQThread Limit>` | *(Optional)* Number of threads for **MAFFT** and **IQ-TREE**. Ensure that `CPU × Thread Limit` does **not** exceed total available threads. |
+| `-c <CPU Limit>` | *(Optional)* Number of concurrent jobs (threads) to run. Controls parallelism. Default is 1 job |
+| `-x <IQThread Limit>` | *(Optional)* Number of threads for **MAFFT** and **IQ-TREE**. Ensure that `CPU × Thread Limit` does **not** exceed the total available threads. |
 | `-b <Path to Script>` | *(Optional)* Full path to the original script. Needed **only** if you use a time limit (`-t`). |
 | `-t <Time Limit (seconds)>` | *(Optional)* Time limit (in seconds) for the current job. |
 | `-s <System Type>` | *(Optional)* Specify `-s s` for **SLURM** systems or `-s n` for **local** execution. Default is `n`. |
-| `-p` | *(Optional)* Run **Prequal**, **QInSi**, and **ClipKIT** before alignment. These tools must be installed. If omitted, the default run will include **MAFFT** and **IQ-TREE** only. |
+| `-p` | **(REQUIRED METHOD 2 Run **Prequal**, **QInSi**, and **ClipKIT** before alignment. These tools must be installed. If omitted, the default run will include **MAFFT** and **IQ-TREE** only. |
 | `-pi` | *(Optional)* Same as `-p`, but also runs **IQ-TREE** on the aligned output. |
