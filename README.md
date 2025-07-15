@@ -63,6 +63,13 @@ mv [InputFolder]/[FastaFile.fa] [OutputFolder/Fasta_Files_Processed]/[FastaFile.
 ApplyPPPFormat.out -i [OutputFolder/MSA_and_Trees/] -t treefile -g [TAXONOMIC_GROUP_FILE] -m [OutputFolder/MSA_and_Trees/] -r [OutputFolder/MSA_and_Corrected_Trees/]
 ```
 
+#### Output folders
+
+- **Fasta_Files_Processed**: Contains the original FASTA files. These are moved here so the program can keep track of which files are done, in case MIAF needs to restart due to time constraints.  
+- **MSA_and_Trees**: Contains the generated multiple sequence alignment files (`*.mafft`) and their corresponding Newick tree files.  
+- **MSA_and_Corrected_Trees** *(optional)*: Contains the corrected Newick and multiple alignment files. This correction addresses how IQ-TREE replaces "@" with "_" when used with OSG (as in the PhyloRSeq++ step preceding this one).
+
+
 ### Method 2: Prequal + MAFFT + ClipKIT (+ optional IQ-TREE)
 
 For each FASTA file:  
@@ -77,7 +84,12 @@ clipkit -m gappy -g 0.75 -log -o [FastaFile.fa.filtered.qinsi.g075] [FastaFile.f
 iqtree -fast -nt [THREAD_LIMIT] -s [FastaFile.fa.filtered.qinsi.g075] -st AA -m TEST -msub nuclear -alrt 1000
 ```
 
-Copy and move files as appropriate to output folders (see example scripts).
+
+#### Output folders
+
+- **Fasta_Files_Processed**: Stores the original FASTA files. They are moved here to track completed files, allowing MIAF to resume smoothly if restarted due to time limits.  
+- **Prequal_Processed**: Contains the results from the ClipKIT step, which can be used for creating a supermatrix with tools like [phyx](https://github.com/FePhyFoFum/phyx).  
+- **Prequal_MSA_and_Trees** *(optional)*: Holds the multiple sequence alignment files and their corresponding Newick tree files generated from both the MAFFT (QInSi) output (.qinsi.*)  and the ClipKIT (.qinsi_g075.*) output.
 
 ---
 
