@@ -1,6 +1,7 @@
 # 🧬 Mafft and IQtree for All FastaFiles (MIAF)
+This repository hosts the MIAF tool, which automates the alignment and phylogenetic analysis of multiple FASTA files using **MAFFT** and **IQ-TREE**, or **prequal**, **MAFFT**, and **ClipKit**. And was created to smoothen the heavily resource demanding steps within the PhyloRSeq++ pipeline. 
+This tool supports **local execution**, and in the near future, **SLURM cluster environments**. It is currently functional but under active development for optimization and parameter tuning.
 
-Automate the alignment and phylogenetic analysis of multiple FASTA files using **MAFFT**, **IQ-TREE**, and optional tools like **PhyloPyPruner** and **ClipKIT**. This tool supports **local execution**, and in the near future, **SLURM cluster environments**. It is currently functional but under active development for optimization and parameter tuning.
 
 ![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)
 ![Platform](https://img.shields.io/badge/platform-Linux-lightgrey)
@@ -63,9 +64,9 @@ Also not:
 - Local disk I/O can become a bottleneck.
 - Prefer use tools like `tmux` or `screen` to manage long-running sessions.
 
-When you run MIAF on a local system, you should be aware of the CPU/thread limitation. As especially IQTree can be very resource demanding I do not recommend to run this on a local machine that is generally used as a desktop or PC.
-The programs runs things in a main thread (manager) and keeps track of it's workers (worker threads). When you set a job limitation of 10. You will run 11 processes simulteanously. (1 main thread and 10 worker threads). When one thread gets done, the next one will be started. Additionally you can asign how many threads per worker threads are available to increase the processing time of all the fasta files.
-Still even with the most advanced local system, these steps can take quite some time as writing to disk (as a lot of different files are generated) can take quite some time as generally local systems are not set up to streamline the writing to disk (as write to disk is generally setup in a serial process and not a parallel process), unlike with HPC systems where generally this process is taken over in a different way to streamline the process.
+When running MIAF on a local system, be mindful of CPU and thread limitations. **IQ-TREE**, in particular, is resource-intensive, so it's not recommended to run this pipeline on machines primarily used as personal desktops or workstations.
+MIAF uses a **manager-worker model**, where the main thread (manager) tracks multiple worker threads. For example, setting a job limit of `10` will result in **11 concurrent processes** (1 manager + 10 workers). Each worker processes a FASTA file, and new jobs begin as others complete. You can also assign the number of threads each worker may use to optimize runtime across multiple files.
+Even on high-end local systems, this process may take considerable time. One major bottleneck is **disk I/O**: since many intermediate files are written to disk, performance is often limited by serial disk access. In contrast, HPC environments typically manage I/O more efficiently through parallelized or distributed file systems, reducing this overhead.
 
 Method 1
 ```
@@ -80,6 +81,7 @@ MIAF.out -i [Fasta_File_Folder] -m ${MAFFT} -r [OUTPUT_FOLDER] -c [NUMBER_OF_SIM
 
 ### SLURM Execution
 ⚠️ **Work in progress** – Not yet supported.
+MIAF is compatible with SLURM-based high-performance computing (HPC) systems and can automatically restart itself if the job limitation is reached. Currently, it runs on a single compute node at a time. Support for running across multiple nodes in parallel is not yet available, but it is planned for future versions.
 
 
 ## 🔧 Command-Line Options
@@ -99,6 +101,21 @@ MIAF.out -i [Fasta_File_Folder] -m ${MAFFT} -r [OUTPUT_FOLDER] -c [NUMBER_OF_SIM
 | `-s <System Type>` | *(Optional)* Specify `-s s` for **SLURM** systems or `-s n` for **local** execution. Default is `n`. |
 | `-p` | **(REQUIRED METHOD 2 Run **Prequal**, **QInSi**, and **ClipKIT** before alignment. These tools must be installed. If omitted, the default run will include **MAFFT** and **IQ-TREE** only. |
 | `-pi` | *(Optional)* Same as `-p`, but also runs **IQ-TREE** on the aligned output. |
+
+## Executables
+
+This tool was created using the Boost library (version 1.88). It is developed in Visual Studio 2019 with the GCC compiler (For remote Linux). I've compiled two different (static) executables (they are portable!) under:
+
+- **Debian 12:**  
+  [MIAF_Static_Debian.out](https://github.com/mjbieren/MIAF/blob/main/Sources/Executables/MIAF_Static_Debian.out)
+
+- **Rocky Linux 8 (Red Hat-based):**  
+  [MIAF_STATIC_HPC.out](https://github.com/mjbieren/MIAF/blob/main/Sources/Executables/MIAF_Static_HPC.out)
+
+
+Or compile your own from source.
+
+---
 
 ## 🔗 References
 
