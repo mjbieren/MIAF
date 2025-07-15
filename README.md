@@ -35,6 +35,8 @@ mv [InputFolder]/[FastaFile.fa] [OutputFolder/Fasta_Files_Processed]/[FastaFile.
 ApplyPPPFormat.out -i [OutputFolder/MSA_and_Trees/] -t treefile -g [TAXONOMIC_GROUP_FILE_PATH] -m [OutputFolder/MSA_and_Trees/] -r [OutputFolder/MSA_and_Corrected_Trees/]
 ```
 
+See [MIAF_LOCALSYSTEM_METHOD_1_MAFFT_IQTREE.sh](https://github.com/mjbieren/MIAF/blob/main/MIAF_LOCALSYSTEM_METHOD_1_MAFFT_IQTREE.sh) for an example and quickstart.
+
 ### Method 2
 For each FASTA file (items in <> are optional):
 ```
@@ -50,6 +52,8 @@ cp [InputFolder]/[FastaFile].fa.filtered.qinsi.g075 [OutputFolder/Prequal_Proces
 <cp [InputFolder]/[FastaFile].fa.filtered.qinsi.g075.treefile [OutputFolder/Prequal_MSA_and_Trees]/[FastaFile].qinsi_g075.treefile>
 <cp [InputFolder]/[FastaFile].fa.filtered.qinsi.g075 [OutputFolder/Prequal_MSA_and_Trees]/[FastaFile].qinsi_g075.fa>
 ```
+
+See [MIAF_LOCALSYSTEM_METHOD_2_PREQUAL_MAFFT_CLIPKIT.sh](https://github.com/mjbieren/MIAF/blob/main/MIAF_LOCALSYSTEM_METHOD_2_PREQUAL_MAFFT_CLIPKIT.sh) for an example and quickstart.
 
 ## 🖥️ Systems Explained
 ### Local Execution
