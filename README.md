@@ -2,7 +2,7 @@
 
 Automate the alignment and phylogenetic analysis of multiple FASTA files using **MAFFT**, **IQ-TREE**, and optional tools like **PhyloPyPruner** and **ClipKIT**. This tool supports both **local execution** and **SLURM cluster environments**, and is highly configurable for parallel processing.
 
-![License](https://img.shields.io/badge/license-MIT-blue)
+![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)
 ![Platform](https://img.shields.io/badge/platform-Linux-lightgrey)
 
 ---
