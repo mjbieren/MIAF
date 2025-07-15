@@ -1,0 +1,57 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.34601.136
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "MIAF", "MIAF.vcxproj", "{A0AD0F78-8215-48EB-97B5-1B33802458A4}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|ARM = Debug|ARM
+		Debug|ARM64 = Debug|ARM64
+		Debug|x64 = Debug|x64
+		Debug|x86 = Debug|x86
+		Release|ARM = Release|ARM
+		Release|ARM64 = Release|ARM64
+		Release|x64 = Release|x64
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{A0AD0F78-8215-48EB-97B5-1B33802458A4}.Debug|ARM.ActiveCfg = Debug|ARM
+		{A0AD0F78-8215-48EB-97B5-1B33802458A4}.Debug|ARM.Build.0 = Debug|ARM
+		{A0AD0F78-8215-48EB-97B5-1B33802458A4}.Debug|ARM.Deploy.0 = Debug|ARM
+		{A0AD0F78-8215-48EB-97B5-1B33802458A4}.Debug|ARM64.ActiveCfg = Debug|ARM64
+		{A0AD0F78-8215-48EB-97B5-1B33802458A4}.Debug|ARM64.Build.0 = Debug|ARM64
+		{A0AD0F78-8215-48EB-97B5-1B33802458A4}.Debug|ARM64.Deploy.0 = Debug|ARM64
+		{A0AD0F78-8215-48EB-97B5-1B33802458A4}.Debug|x64.ActiveCfg = Debug|x64
+		{A0AD0F78-8215-48EB-97B5-1B33802458A4}.Debug|x64.Build.0 = Debug|x64
+		{A0AD0F78-8215-48EB-97B5-1B33802458A4}.Debug|x64.Deploy.0 = Debug|x64
+		{A0AD0F78-8215-48EB-97B5-1B33802458A4}.Debug|x86.ActiveCfg = Debug|x86
+		{A0AD0F78-8215-48EB-97B5-1B33802458A4}.Debug|x86.Build.0 = Debug|x86
+		{A0AD0F78-8215-48EB-97B5-1B33802458A4}.Debug|x86.Deploy.0 = Debug|x86
+		{A0AD0F78-8215-48EB-97B5-1B33802458A4}.Release|ARM.ActiveCfg = Release|ARM
+		{A0AD0F78-8215-48EB-97B5-1B33802458A4}.Release|ARM.Build.0 = Release|ARM
+		{A0AD0F78-8215-48EB-97B5-1B33802458A4}.Release|ARM.Deploy.0 = Release|ARM
+		{A0AD0F78-8215-48EB-97B5-1B33802458A4}.Release|ARM64.ActiveCfg = Release|ARM64
+		{A0AD0F78-8215-48EB-97B5-1B33802458A4}.Release|ARM64.Build.0 = Release|ARM64
+		{A0AD0F78-8215-48EB-97B5-1B33802458A4}.Release|ARM64.Deploy.0 = Release|ARM64
+		{A0AD0F78-8215-48EB-97B5-1B33802458A4}.Release|x64.ActiveCfg = Release|x64
+		{A0AD0F78-8215-48EB-97B5-1B33802458A4}.Release|x64.Build.0 = Release|x64
+		{A0AD0F78-8215-48EB-97B5-1B33802458A4}.Release|x64.Deploy.0 = Release|x64
+		{A0AD0F78-8215-48EB-97B5-1B33802458A4}.Release|x86.ActiveCfg = Release|x86
+		{A0AD0F78-8215-48EB-97B5-1B33802458A4}.Release|x86.Build.0 = Release|x86
+		{A0AD0F78-8215-48EB-97B5-1B33802458A4}.Release|x86.Deploy.0 = Release|x86
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {1B9ECAD9-28DF-4F9A-82BC-F5F0DE498281}
+	EndGlobalSection
+	GlobalSection(SourceCodeControl) = preSolution
+		SccNumberOfProjects = 2
+		SccLocalPath0 = .
+		SccProjectUniqueName1 = MIAF.vcxproj
+		SccLocalPath1 = .
+	EndGlobalSection
+EndGlobal
