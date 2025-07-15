@@ -125,7 +125,7 @@ Precompiled static executables available:
 - Debian 12: [MIAF_Static_Debian.out](https://github.com/mjbieren/MIAF/blob/main/Sources/Executables/MIAF_Static_Debian.out)  
 - Rocky Linux 8: [MIAF_Static_HPC.out](https://github.com/mjbieren/MIAF/blob/main/Sources/Executables/MIAF_Static_HPC.out)  
 
-Or compile from source.
+Or compile from source. (Boost library 1.88, visual studio 2019, gcc compiler)
 
 ---
 
